@@ -8,6 +8,7 @@ RUN git clone https://kyriakos1594:gaiden1594@github.com/kyriakos1594/emie.git
 
 #Intsall python and mysql
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python3
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python3-pip
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y -f install mysql-client
 
@@ -19,7 +20,7 @@ ENTRYPOINT service mysql start && bash
 
 WORKDIR /emie
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 #python3 emie/deploy/deploy_hedgner.py && bash
 #ENTRYPOINT python3 emie/deploy/deploy_hedgner.py
 
