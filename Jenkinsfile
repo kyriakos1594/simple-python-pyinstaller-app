@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') { 
             steps {
-                sh 'python3 ./emie/deploy/deploy_hedgner.py' 
+                sh 'python ./emie/deploy/deploy_hedgner.py' 
             }
             }
         }
