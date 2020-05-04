@@ -2,9 +2,10 @@ pipeline {
     agent none 
     stages {
         stage('Build') { 
-            agent {dockerfile true}
+            agent {}
             steps {
-                sh 'python3 emie/deploy/deploy_hetzner.py'  
+                sh 'python -m py_compile sources/add2vals.py sources/calc.py' 
+                stash(name: 'compiled-results', includes: 'sources/*.py*') 
             }
         }
         stage('Test') {
