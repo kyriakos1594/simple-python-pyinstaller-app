@@ -1,5 +1,5 @@
 #Main OS image pulled from docker. First layer
-FROM ubuntu:18.04
+FROM python:3.6
 
 #Run updates
 RUN apt-get update
@@ -7,7 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install git
 RUN git clone https://kyriakos1594:gaiden1594@github.com/kyriakos1594/emie.git
 
 #Intsall python and mysql
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python3
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python3.6
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python3-pip
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y -f install mysql-client
