@@ -16,7 +16,7 @@ pipeline {
             agent {
                 docker {
                     image 'qnib/pytest'
-	            imege 'emie_service:latest'
+	            image 'emie_service:latest'
                 }
             }
             steps {
