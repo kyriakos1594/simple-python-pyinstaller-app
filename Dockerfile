@@ -16,6 +16,10 @@ EXPOSE 3306
 
 #Entrypoint - Services need an etrypoint to run
 ENTRYPOINT service mysql start && bash
+
+WORKDIR /emie
+
+RUN pip install -r requirements.txt
 #python3 emie/deploy/deploy_hedgner.py && bash
 #ENTRYPOINT python3 emie/deploy/deploy_hedgner.py
 
