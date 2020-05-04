@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 
 #Run updates
 RUN apt-get update
-RUN DEBIAN_FRONTEND=nointeractive apt-get -y install git
+RUN DEBIAN_FRONTEND=interactive apt-get -y install git
 RUN git clone https://kyriakos1594:gaiden1594@github.com/kyriakos1594/emie.git
 
 #Intsall python and mysql
