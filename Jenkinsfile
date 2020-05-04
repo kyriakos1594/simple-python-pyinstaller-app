@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             agent {
                 docker {
-                    image 'python:2-alpine' 
+                    image 'emie_service:latest' 
                 }
             }
             steps {
@@ -16,6 +16,7 @@ pipeline {
             agent {
                 docker {
                     image 'qnib/pytest'
+	            imege 'emie_service:latest'
                 }
             }
             steps {
